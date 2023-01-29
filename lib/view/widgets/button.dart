@@ -20,21 +20,23 @@ class GradientButtonFb1 extends StatelessWidget {
           color: primaryColor,
           borderRadius: BorderRadius.circular(borderRadius),
         ),
-        child: ElevatedButton(
-          style: ButtonStyle(
-              elevation: MaterialStateProperty.all(0),
-              alignment: Alignment.center,
-              padding: MaterialStateProperty.all(const EdgeInsets.only(
-                  right: 150, left: 150, top: 15, bottom: 15)),
-              backgroundColor: MaterialStateProperty.all(Colors.transparent),
-              shape: MaterialStateProperty.all(
-                RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(borderRadius)),
-              )),
-          onPressed: onPressed,
-          child: Text(
-            text,
-            style: const TextStyle(color: accentColor, fontSize: 16),
+        child: SizedBox(
+          height: 60,
+          width: double.infinity,
+          child: ElevatedButton(
+            style: ButtonStyle(
+                elevation: MaterialStateProperty.all(0),
+                alignment: Alignment.center,
+                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(borderRadius)),
+                )),
+            onPressed: onPressed,
+            child: Text(
+              text,
+              style: const TextStyle(color: accentColor, fontSize: 16),
+            ),
           ),
         ));
   }
