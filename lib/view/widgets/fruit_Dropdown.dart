@@ -1,28 +1,23 @@
-import 'dart:async';
-
-import 'package:agro_hamkor/view/handler_page.dart';
-import 'package:agro_hamkor/view/user/user_handler.dart';
 import 'package:flutter/material.dart';
 
-class Dropdown extends StatefulWidget {
-  const Dropdown({super.key});
+class FruitDropdown extends StatefulWidget {
+  const FruitDropdown({super.key});
 
   @override
-  State<Dropdown> createState() => _DropdownButtonExampleState();
+  State<FruitDropdown> createState() => _DropdownButtonExampleState();
 }
 
-class _DropdownButtonExampleState extends State<Dropdown> {
+class _DropdownButtonExampleState extends State<FruitDropdown> {
   List<DropdownMenuItem<String>> get dropdownItems {
     List<DropdownMenuItem<String>> menuItems = [
-      const DropdownMenuItem(value: "Fermer", child: Text("Fermer")),
-      const DropdownMenuItem(value: "Istemolchi", child: Text("Istemolchi")),
-      const DropdownMenuItem(
-          value: "Labaratoriya", child: Text("Labaratoriya")),
+      const DropdownMenuItem(value: "Meva", child: Text("Meva")),
+      const DropdownMenuItem(value: "Sabzavot", child: Text("Sabzavot")),
+      const DropdownMenuItem(value: "Poliz ekini", child: Text("poliz ekini")),
     ];
     return menuItems;
   }
 
-  String selectedValue = "Fermer";
+  String selectedValue = "Meva";
 
   @override
   Widget build(BuildContext context) {
@@ -51,15 +46,6 @@ class _DropdownButtonExampleState extends State<Dropdown> {
           onChanged: (String? newValue) {
             setState(() {
               selectedValue = newValue!;
-              if (selectedValue == "Fermer") {
-                Future.delayed(const Duration(seconds: 3)).then((value) =>
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const HomeScreen())));
-              } else {
-                Future.delayed(const Duration(seconds: 3)).then((value) =>
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const UserHandler())));
-              }
             });
           },
           items: dropdownItems,

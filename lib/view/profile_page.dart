@@ -9,6 +9,16 @@ class Profile extends StatelessWidget {
     return CustomScrollView(
       slivers: <Widget>[
         SliverAppBar(
+          actions: const [
+            Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Icon(
+                Icons.login,
+                color: Colors.red,
+              ),
+            )
+          ],
+          backgroundColor: ColorConstant.greenA400,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
               bottom: Radius.circular(30),
@@ -69,13 +79,60 @@ class Profile extends StatelessWidget {
         SliverList(
             delegate: SliverChildListDelegate([
           Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
             child: Row(
-              children: const [],
+              children: [
+                Image.asset(
+                  "assets/edit.png",
+                  height: 25,
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                const Text("Profilni taxrirlash")
+              ],
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 0),
+            child: Row(
+              children: [
+                Image.asset(
+                  "assets/unlock.png",
+                  height: 30,
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                const Text("Profilni taxrirlash"),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 0),
+            child: Row(
+              children: const [
+                Icon(
+                  Icons.payment,
+                  color: Color.fromARGB(255, 58, 188, 62),
+                ),
+                SizedBox(
+                  width: 22,
+                ),
+                Text("Profilni taxrirlash"),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const Divider(
+            thickness: 2,
+          ),
+          const Center(child: Text("E'lonlar mavjud emas"))
         ]))
       ],
     );

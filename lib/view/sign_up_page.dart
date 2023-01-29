@@ -10,6 +10,7 @@ class SignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController phoneController = TextEditingController();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -42,7 +43,10 @@ class SignUp extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const MyTextField(hintText: "Telefon raqam"),
+            MyTextField(
+              hintText: "Telefon raqam",
+              controller: phoneController,
+            ),
             const SizedBox(
               height: 20,
             ),
@@ -54,7 +58,9 @@ class SignUp extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const MyTextField(hintText: "Tugilgan vaqti"),
+            const MyTextField(
+              hintText: "Tugilgan vaqti",
+            ),
             const SizedBox(
               height: 20,
             ),
